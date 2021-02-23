@@ -4,6 +4,8 @@ import diaphragm from "../img/diaphragm.svg";
 import money from "../img/money.svg";
 import teamwork from "../img/money.svg";
 import HomeTwo from "../img/home2.png";
+// Styled
+import styled from 'styled-components'
 
 const ServicesSection = () => {
   return (
@@ -49,7 +51,7 @@ const ServicesSection = () => {
       </div>
 
       <div className="image">
-        <img src={HomeTwo} alt="home two image" />
+        <img src={HomeTwo} alt="camera" />
       </div>
     </div>
   );
