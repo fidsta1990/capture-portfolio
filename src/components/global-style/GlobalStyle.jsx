@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
 body{
   background: #1b1b1b;
   font-family: 'Inter', sans-serif;
-  /* font-family: 'Lobster', cursive; */
+
 
 }
 
@@ -50,6 +50,7 @@ font-size:2rem;
 
 a{
   font-size: 1.1rem;
+  text-decoration: none;
 }
 
 span{

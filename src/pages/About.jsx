@@ -1,9 +1,14 @@
 import React from "react";
+import AboutSec from "../components/AboutSection";
+import ServicesSec from "../components/ServicesSection";
+import FaqSec from "../components/FaqSection";
 
 const About = () => {
   return (
     <div>
-      <h2>About Page</h2>
+      <AboutSec />
+      <ServicesSec />
+      <FaqSec />
     </div>
   );
 };

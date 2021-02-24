@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const About = styled.div`
   min-height: 90vh;
@@ -32,4 +32,3 @@ export const Image = styled.div`
 export const Hide = styled.div`
   overflow: hidden;
 `;
-
