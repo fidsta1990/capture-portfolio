@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import OurWork from "./pages/OurWork";
 import Contact from "./pages/Contact";
+import MovieDetail from "./pages/MovieDetail";
+
 // GLOBAL STYLE
 import GlobalStyle from "./components/global-style/GlobalStyle";
 
@@ -17,8 +19,11 @@ function App() {
         <Route exact path="/">
           <About />
         </Route>
-        <Route path="/work">
+        <Route exact path="/work">
           <OurWork />
+        </Route>
+        <Route path="/work/:id">
+          <MovieDetail />
         </Route>
         <Route path="/contact">
           <Contact />
