@@ -5,31 +5,42 @@ import athlete from "../img/athlete-small.png";
 import theracer from "../img/theracer-small.png";
 import goodtimes from "../img/goodtimes-small.png";
 
+// animation
+import { pageAnimation } from "../animation";
+import { motion } from "framer-motion";
+
 const OurWork = () => {
   return (
-    <Work>
-      <Movie>
-        <h2>The Athlete</h2>
-        <div className="line"></div>
-        <Link to="/work/the-athlete">
-          <img src={athlete} alt="athlete" />
-        </Link>
-      </Movie>
-      <Movie>
-        <h2>The Racer</h2>
-        <div className="line"></div>
-        <Link to="/work/the-racer">
-          <img src={theracer} alt="the racer" />
-        </Link>
-      </Movie>
-      <Movie>
-        <h2> Good Times</h2>
-        <div className="line"></div>
-        <Link to="/work/good-times">
-          <img src={goodtimes} alt="goodtimes" />
-        </Link>
-      </Movie>
-    </Work>
+    <motion.div
+      exit="exit"
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+    >
+      <Work>
+        <Movie>
+          <h2>The Athlete</h2>
+          <div className="line"></div>
+          <Link to="/work/the-athlete">
+            <img src={athlete} alt="athlete" />
+          </Link>
+        </Movie>
+        <Movie>
+          <h2>The Racer</h2>
+          <div className="line"></div>
+          <Link to="/work/the-racer">
+            <img src={theracer} alt="the racer" />
+          </Link>
+        </Movie>
+        <Movie>
+          <h2> Good Times</h2>
+          <div className="line"></div>
+          <Link to="/work/good-times">
+            <img src={goodtimes} alt="goodtimes" />
+          </Link>
+        </Movie>
+      </Work>
+    </motion.div>
   );
 };
 

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { MovieState } from "../movieState";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import { pageAnimation } from "../animation";
+import { motion } from "framer-motion";
 
 const MovieDetail = () => {
   const history = useHistory();
@@ -17,20 +19,22 @@ const MovieDetail = () => {
   return (
     <>
       {movie && (
-        <Details>
-          <Headline>
-            <h2>{movie.title}</h2>
-            <img src={movie.mainImg} alt={movie.title} />
-          </Headline>
-          <Awards>
-            {movie.awards.map((award, index) => {
-              return <Award key={index} {...award} />;
-            })}
-          </Awards>
-          <ImageDisplay>
-            <img src={movie.secondaryImg} alt="movie image two" />
-          </ImageDisplay>
-        </Details>
+        <motion.div exit="exit" variants={pageAnimation} initial="hidden" animate="show">
+          <Details>
+            <Headline>
+              <h2>{movie.title}</h2>
+              <img src={movie.mainImg} alt={movie.title} />
+            </Headline>
+            <Awards>
+              {movie.awards.map((award, index) => {
+                return <Award key={index} {...award} />;
+              })}
+            </Awards>
+            <ImageDisplay>
+              <img src={movie.secondaryImg} alt="movie image two" />
+            </ImageDisplay>
+          </Details>
+        </motion.div>
       )}
     </>
   );
