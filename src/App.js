@@ -11,12 +11,14 @@ import GlobalStyle from "./components/global-style/GlobalStyle";
 import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
+
 function App() {
   const location = useLocation();
 
   return (
     <div className="App">
       <GlobalStyle />
+    
       <Navbar />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>

@@ -38,6 +38,9 @@ const Nav = styled.nav`
   background: #282828;
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 9;
 
   .nav-wrap {
     display: flex;

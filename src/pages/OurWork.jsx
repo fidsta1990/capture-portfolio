@@ -16,66 +16,66 @@ import {
 } from "../animation";
 import { motion } from "framer-motion";
 import { useScroll } from "../components/useScroll";
+import ScrollTop from "../components/ScrollTop";
 
 const OurWork = () => {
   const [element, controls] = useScroll();
   const [element2, controls2] = useScroll();
   return (
-    <motion.div
+    <Work
       exit="exit"
       variants={pageAnimation}
       initial="hidden"
       animate="show"
       style={{ background: "#fff" }}
     >
-      <Work>
-        <Frame1 variants={slider}></Frame1>
-        <Frame2 variants={slider}></Frame2>
-        <Frame3 variants={slider}></Frame3>
-        <Frame4 variants={slider}></Frame4>
-        <Movie>
-          <motion.h2 variants={fade}>The Athlete</motion.h2>
-          <motion.div variants={lineAnim} className="line"></motion.div>
-          <Link to="/work/the-athlete">
-            <Hide>
-              <motion.img variants={photoAnim} src={athlete} alt="athlete" />
-            </Hide>
-          </Link>
-        </Movie>
-        <Movie
-          variants={scrollReveal}
-          ref={element}
-          initial="hidden"
-          animate={controls}
-        >
-          <h2>The Racer</h2>
-          <motion.div variants={lineAnim} className="line"></motion.div>
-          <Link to="/work/the-racer">
-            <img src={theracer} alt="the racer" />
-          </Link>
-        </Movie>
-        <Movie
+      <Frame1 variants={slider}></Frame1>
+      <Frame2 variants={slider}></Frame2>
+      <Frame3 variants={slider}></Frame3>
+      <Frame4 variants={slider}></Frame4>
+      <Movie>
+        <motion.h2 variants={fade}>The Athlete</motion.h2>
+        <motion.div variants={lineAnim} className="line"></motion.div>
+        <Link to="/work/the-athlete">
+          <Hide>
+            <motion.img variants={photoAnim} src={athlete} alt="athlete" />
+          </Hide>
+        </Link>
+      </Movie>
+      <Movie
+        variants={scrollReveal}
+        ref={element}
+        initial="hidden"
+        animate={controls}
+      >
+        <h2>The Racer</h2>
+        <motion.div variants={lineAnim} className="line"></motion.div>
+        <Link to="/work/the-racer">
+          <img src={theracer} alt="the racer" />
+        </Link>
+      </Movie>
+      <Movie
         variants={scrollReveal}
         ref={element2}
         initial="hidden"
-        animate={controls2}>
-          <h2> Good Times</h2>
-          <motion.div variants={lineAnim} className="line"></motion.div>
-          <Link to="/work/good-times">
-            <img src={goodtimes} alt="goodtimes" />
-          </Link>
-        </Movie>
-      </Work>
-    </motion.div>
+        animate={controls2}
+      >
+        <h2> Good Times</h2>
+        <motion.div variants={lineAnim} className="line"></motion.div>
+        <Link to="/work/good-times">
+          <img src={goodtimes} alt="goodtimes" />
+        </Link>
+      </Movie>
+      <ScrollTop />
+    </Work>
   );
 };
 
-const Work = styled.div`
+const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
-  width: 90vw;
   margin: auto;
-  padding: 5rem 0;
+  padding: 5rem 10rem;
 
   h2 {
     padding: 1rem 0;
