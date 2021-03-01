@@ -7,13 +7,13 @@ import { About, Description, Image, Hide } from "../styles";
 import { motion } from "framer-motion";
 import { titleAnimation, fade, photoAnim } from "../animation";
 import Wave from "./Wave";
-
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
     <About>
       <Description>
-        <motion.div className="title">
+        <motion.div>
           <Hide>
             <motion.h2 variants={titleAnimation}>We work to make</motion.h2>
           </Hide>
@@ -30,7 +30,11 @@ const AboutSection = () => {
           A home full of professionals that bring vibrants ideas catered to
           videography and photography.
         </motion.p>
-        <motion.button variants={fade}>Contact Us</motion.button>
+        <motion.button variants={fade}>
+          <Link to="/contact" style={{ color: "#fff" }}>
+            Contact Us
+          </Link>
+        </motion.button>
       </Description>
 
       <Image>
