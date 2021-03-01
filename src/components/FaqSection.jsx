@@ -4,61 +4,68 @@ import styled from "styled-components";
 import { About } from "../styles";
 import Toggle from "./Toggle";
 import { AnimateSharedLayout } from "framer-motion";
+import { useScroll } from "./useScroll";
+import { scrollReveal } from "../animation";
 
 const FaqSection = () => {
   const [faqToggle, setFaqToggle] = useState(false);
-
+  const [element, controls] = useScroll();
   return (
-    <Faq>
+    <Faq
+      variants={scrollReveal}
+      initial="hidden"
+      animate={controls}
+      ref={element}
+    >
       <h2>
         Any Questions <span>FAQ</span>
       </h2>
-<AnimateSharedLayout>
-      <Toggle title="How Do I start?">
-        {/* question */}
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          {faqToggle && (
+      <AnimateSharedLayout>
+        <Toggle title="How Do I start?">
+          {/* question */}
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            {faqToggle && (
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Doloremque, placeat.
+              </p>
+            )}
+          </div>
+        </Toggle>
+        <Toggle title="Daily Schedule">
+          {/* question */}
+
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Doloremque, placeat.
             </p>
-          )}
-        </div>
-      </Toggle>
-      <Toggle title="Daily Schedule">
-        {/* question */}
+          </div>
+        </Toggle>
+        <Toggle title="Daily Payments">
+          {/* question */}
 
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Doloremque, placeat.
-          </p>
-        </div>
-      </Toggle>
-      <Toggle title="Daily Payments">
-        {/* question */}
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Doloremque, placeat.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="What Products Do You Offer?">
+          {/* question */}
 
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Doloremque, placeat.
-          </p>
-        </div>
-      </Toggle>
-      <Toggle title="What Products Do You Offer?">
-        {/* question */}
-
-        <div className="answer">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Doloremque, placeat.
-          </p>
-        </div>
-      </Toggle>
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Doloremque, placeat.
+            </p>
+          </div>
+        </Toggle>
       </AnimateSharedLayout>
     </Faq>
   );
@@ -66,6 +73,8 @@ const FaqSection = () => {
 
 const Faq = styled(About)`
   display: block;
+  min-height: 100vh;
+  margin-top: 4rem;
 
   span {
     display: block;
