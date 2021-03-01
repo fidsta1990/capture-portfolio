@@ -19,7 +19,12 @@ const MovieDetail = () => {
   return (
     <>
       {movie && (
-        <motion.div exit="exit" variants={pageAnimation} initial="hidden" animate="show">
+        <motion.div
+          exit="exit"
+          variants={pageAnimation}
+          initial="hidden"
+          animate="show"
+        >
           <Details>
             <Headline>
               <h2>{movie.title}</h2>
@@ -59,6 +64,10 @@ const Headline = styled.div`
     width: 100%;
     height: 70vh;
     object-fit: cover;
+
+    @media (max-width: 1500px) {
+      margin-top: 2rem;
+    }
   }
 `;
 
@@ -68,6 +77,11 @@ const Awards = styled.div`
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+
+  @media (max-width: 1500px) {
+    display: block;
+    margin: 2rem;
+  }
 `;
 const AwardStyle = styled.div`
   padding: 5rem;

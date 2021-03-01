@@ -49,6 +49,10 @@ const Nav = styled.nav`
     padding: 1rem;
     margin: auto;
     width: 90vw;
+
+    @media (max-width: 1300px) {
+      flex-direction: column;
+    }
   }
 
   a {
@@ -58,6 +62,12 @@ const Nav = styled.nav`
   ul {
     list-style: none;
     display: flex;
+
+    @media (max-width: 1300px) {
+      padding: 2rem;
+      justify-content: space-around;
+      width: 100%;
+    }
   }
 
   #logo {
@@ -69,6 +79,10 @@ const Nav = styled.nav`
   li {
     padding-left: 10rem;
     position: relative;
+
+    @media (max-width: 1300px) {
+     padding-left:0;
+    }
   }
 `;
 
